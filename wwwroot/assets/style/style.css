@@ -1,0 +1,152 @@
+/*@import "fonts.css";*/
+@import url("https://fonts.googleapis.com/css?family=Exo+2:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Oxygen:300,400,700&subset=latin-ext");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  background-color: #1f3f56; }
+
+body {
+  font-family: "Exo 2";
+  font-size: 15px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome and Opera */ }
+  body input, body textarea {
+    border: 1px solid #1f3f56;
+    font-family: Oxygen; }
+    body input:active, body input:focus, body textarea:active, body textarea:focus {
+      outline: none; }
+  body .page-header {
+    height: 5em;
+    background-color: #1f3f56;
+    box-shadow: 0px -1px 3px 0px #4f90bf; }
+    body .page-header .logo {
+      font-family: "Exo 2";
+      margin-top: 18px; }
+      body .page-header .logo .first {
+        font-weight: 600;
+        font-size: 30px;
+        fill: #fff; }
+      body .page-header .logo .second {
+        font-weight: 500;
+        font-size: 22px;
+        fill: #bfd7e8; }
+    body .page-header .searchbox {
+      display: inline-flex;
+      border: 1px solid #2d5a7b;
+      margin: 18px;
+      width: 40%;
+      padding: 0px; }
+      body .page-header .searchbox input {
+        padding: .5em 1em;
+        border: none;
+        width: 90%; }
+      body .page-header .searchbox button {
+        text-align: center;
+        background-color: #bfd7e8;
+        width: 10%;
+        border: none;
+        padding: .5em 1em;
+        cursor: pointer;
+        color: #1f3f56; }
+  body .page-content {
+    background-color: #fff;
+    display: block;
+    margin-bottom: 10em;
+    margin: 0px;
+    padding: 1em; }
+    body .page-content table.category {
+      width: 100%;
+      min-width: 10em;
+      border: 1px solid #1f3f56;
+      margin-top: 1.5em; }
+      body .page-content table.category thead {
+        content: inherit; }
+        body .page-content table.category thead tr th {
+          padding: .3em;
+          border-bottom: 1px solid #1f3f56;
+          color: #fff;
+          background-color: #1f3f56;
+          font-weight: 600; }
+      body .page-content table.category tfoot {
+        content: inherit; }
+        body .page-content table.category tfoot tr th {
+          text-align: right;
+          padding: .3em; }
+          body .page-content table.category tfoot tr th a:before {
+            content: " "; }
+          body .page-content table.category tfoot tr th a:after {
+            content: "..."; }
+      body .page-content table.category tbody {
+        border: 1px solid #1f3f56; }
+        body .page-content table.category tbody tr {
+          content: inherit; }
+          body .page-content table.category tbody tr td {
+            white-space: nowrap;
+            cursor: pointer; }
+            body .page-content table.category tbody tr td a {
+              color: #2d5a7b;
+              width: 100%;
+              display: block;
+              padding: .4em; }
+              body .page-content table.category tbody tr td a:hover {
+                text-decoration: none; }
+            body .page-content table.category tbody tr td:hover {
+              background-color: #74a8cd; }
+              body .page-content table.category tbody tr td:hover a {
+                color: #fff; }
+            body .page-content table.category tbody tr td:empty {
+              height: 1.8em; }
+              body .page-content table.category tbody tr td:empty:hover {
+                background-color: inherit; }
+  body .page-footer {
+    color: inherit; }
+    body .page-footer .page-footer-text {
+      color: #bfd7e8;
+      text-align: center;
+      border-top: 1px solid #bfd7e8;
+      margin-top: 4em;
+      padding-top: 1em; }
+
+/*# sourceMappingURL=style.css.map */

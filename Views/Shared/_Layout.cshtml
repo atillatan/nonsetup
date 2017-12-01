@@ -2,37 +2,22 @@
 @using System.ComponentModel
 @using Microsoft.AspNetCore.Mvc.ViewComponents
 @using System.Threading.Tasks
- 
+
 <!DOCTYPE html>
 <html lang="en">
 	 @await Html.PartialAsync("/Views/Shared/head.cshtml")
-
 <body id="body">
-
-    <header class="container">
-			 @await Html.PartialAsync("/Views/Shared/top-nav.cshtml")
+    <header class="container-fluid">
+			 @await Html.PartialAsync("/Views/Shared/header.cshtml")
     </header>
 
-    <section class="container">
-        <div class="row">
-				
-            <div class="col-md-3">
-                @await Html.PartialAsync("/Views/Shared/nav-left.cshtml")
-            </div>
-				
-            <div class="col-md-9 content body-content">
-            
+    <section class="page-content container-fluid">            
             @RenderBody()
-            
-            </div>		
-     
-				
-        </div>
-    </section>
-            <br>
-        <footer class="container">
-              @await Html.PartialAsync("/Views/Shared/footer.cshtml")
-        </footer>
+    </section>     
+    
+    <footer class="container  page-footer">
+            @await Html.PartialAsync("/Views/Shared/footer.cshtml")
+    </footer>
 </body>
 </html>
 
