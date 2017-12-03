@@ -9,22 +9,24 @@ using mvc.Models;
 namespace mvc.Controllers
 {
     public class HomeController : Controller
-    {
+    {        
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        [Route("download-detail")]
+        public IActionResult Detail()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Download detail page";
 
             return View();
         }
 
-        public IActionResult Contact()
+        [Route("download")]
+        public IActionResult Download()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Download page";
 
             return View();
         }

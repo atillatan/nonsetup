@@ -18,6 +18,24 @@ body {
 ol, ul {
   list-style: none; }
 
+strong {
+  font-weight: 700; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.8em; }
+
+h3 {
+  font-size: 1.6em; }
+
+h4 {
+  font-size: 1.4em; }
+
+h5 {
+  font-size: 1.2em; }
+
 blockquote, q {
   quotes: none; }
 
@@ -52,18 +70,27 @@ body {
   user-select: none;
   /* Non-prefixed version, currently
   supported by Chrome and Opera */ }
-  body input, body textarea {
+  body input, body textarea, body select {
     border: 1px solid #1f3f56;
-    font-family: Oxygen; }
-    body input:active, body input:focus, body textarea:active, body textarea:focus {
+    font-family: Oxygen;
+    font-size: 1em;
+    color: #1f3f56;
+    padding: .3em; }
+    body input:active, body input:focus, body textarea:active, body textarea:focus, body select:active, body select:focus {
       outline: none; }
+  body select {
+    overflow: hidden;
+    background: transparent;
+    padding: 0 .3em; }
   body .page-header {
     height: 5em;
     background-color: #1f3f56;
-    box-shadow: 0px -1px 3px 0px #4f90bf; }
+    display: flex;
+    width: 100%; }
     body .page-header .logo {
       font-family: "Exo 2";
-      margin-top: 18px; }
+      margin-top: 18px;
+      display: table; }
       body .page-header .logo .first {
         font-weight: 600;
         font-size: 30px;
@@ -72,30 +99,120 @@ body {
         font-weight: 500;
         font-size: 22px;
         fill: #bfd7e8; }
-    body .page-header .searchbox {
-      display: inline-flex;
-      border: 1px solid #2d5a7b;
-      margin: 18px;
-      width: 40%;
-      padding: 0px; }
-      body .page-header .searchbox input {
-        padding: .5em 1em;
-        border: none;
-        width: 90%; }
-      body .page-header .searchbox button {
-        text-align: center;
-        background-color: #bfd7e8;
-        width: 10%;
-        border: none;
-        padding: .5em 1em;
-        cursor: pointer;
-        color: #1f3f56; }
+    @media screen and (min-width: 769px) {
+      body .page-header .searchbox {
+        display: inline-flex;
+        border: 1px solid #2d5a7b;
+        margin: 18px;
+        width: 40%;
+        padding: 0px;
+        min-width: 3em; }
+        body .page-header .searchbox input {
+          padding: .5em 1em;
+          border: none;
+          width: 90%; }
+        body .page-header .searchbox button {
+          text-align: center;
+          background-color: #bfd7e8;
+          width: 10%;
+          border: none;
+          padding: .5em 1em;
+          cursor: pointer;
+          color: #1f3f56;
+          min-width: 3em; } }
+    @media screen and (max-width: 768px) {
+      body .page-header .searchbox {
+        display: inline-flex;
+        border: 1px solid #2d5a7b;
+        margin: 18px;
+        width: 100%;
+        padding: 0px;
+        min-width: 13em; }
+        body .page-header .searchbox input {
+          padding: .5em 1em;
+          border: none;
+          width: 90%; }
+        body .page-header .searchbox button {
+          text-align: center;
+          background-color: #bfd7e8;
+          width: 10%;
+          border: none;
+          padding: .5em 1em;
+          cursor: pointer;
+          color: #1f3f56;
+          min-width: 2.6em; } }
+  @media screen and (max-width: 600px) {
+    body .page-header {
+      display: table; }
+      body .page-header .logo {
+        margin: auto; } }
   body .page-content {
-    background-color: #fff;
+    background-color: #f4f5f7;
     display: block;
     margin-bottom: 10em;
     margin: 0px;
     padding: 1em; }
+    body .page-content .container {
+      background: #fff;
+      box-shadow: 0px 0px 6px -3px #1f3f56;
+      padding: 2em; }
+    body .page-content .advertisement {
+      text-align: center;
+      padding: 1em 0; }
+    body .page-content table.app-details {
+      content: ""; }
+      body .page-content table.app-details thead tr th {
+        font-size: 1.8em;
+        font-weight: 500;
+        padding: .4em 0em; }
+      body .page-content table.app-details tbody tr {
+        content: ""; }
+        body .page-content table.app-details tbody tr th {
+          font-weight: 500;
+          padding: .3em;
+          position: relative; }
+          body .page-content table.app-details tbody tr th:after {
+            content: ""; }
+        body .page-content table.app-details tbody tr td {
+          font-weight: 300;
+          padding: .3em; }
+          body .page-content table.app-details tbody tr td select {
+            content: ""; }
+            body .page-content table.app-details tbody tr td select option {
+              content: ""; }
+      body .page-content table.app-details tfoot {
+        content: inherit; }
+        body .page-content table.app-details tfoot tr td {
+          text-align: center;
+          padding: .3em; }
+          body .page-content table.app-details tfoot tr td button {
+            border: 1px solid #9abfda;
+            width: 80%;
+            padding: .8em;
+            color: #2d5a7b;
+            background-color: #bfd7e8;
+            cursor: pointer;
+            margin-top: 2em; }
+            body .page-content table.app-details tfoot tr td button:before {
+              content: " "; }
+            body .page-content table.app-details tfoot tr td button:after {
+              content: " "; }
+            body .page-content table.app-details tfoot tr td button:hover {
+              background-color: #accbe1; }
+    body .page-content .app-description {
+      padding: .3em;
+      text-align: justify;
+      position: relative;
+      margin-top: 3em; }
+      body .page-content .app-description p, body .page-content .app-description div, body .page-content .app-description h2, body .page-content .app-description h3, body .page-content .app-description h4, body .page-content .app-description h5, body .page-content .app-description h1 {
+        margin: .5em 0; }
+      body .page-content .app-description a {
+        text-decoration: none; }
+      body .page-content .app-description:before {
+        content: "Description";
+        position: absolute;
+        top: -1em;
+        font-size: 1.8em; }
     body .page-content table.category {
       width: 100%;
       min-width: 10em;
@@ -140,6 +257,52 @@ body {
               height: 1.8em; }
               body .page-content table.category tbody tr td:empty:hover {
                 background-color: inherit; }
+    body .page-content .download-information {
+      margin: 1em 3em 6em;
+      text-align: center; }
+    body .page-content .loader {
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px); }
+@keyframes loader {
+  0% {
+    left: -100px; }
+  100% {
+    left: 110%; } }
+      body .page-content .loader .loader-box {
+        width: 50px;
+        height: 50px;
+        background: #1f3f56;
+        animation: animate .5s linear infinite;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 3px; }
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px; }
+  25% {
+    transform: translateY(9px) rotate(22.5deg); }
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px; }
+  75% {
+    transform: translateY(9px) rotate(67.5deg); }
+  100% {
+    transform: translateY(0) rotate(90deg); } }
+      body .page-content .loader .loader-shadow {
+        width: 50px;
+        height: 5px;
+        background: #1f3f56;
+        opacity: 0.1;
+        position: absolute;
+        top: 59px;
+        left: 0;
+        border-radius: 50%;
+        animation: shadow .5s linear infinite; }
+@keyframes shadow {
+  50% {
+    transform: scale(1.2, 1); } }
   body .page-footer {
     color: inherit; }
     body .page-footer .page-footer-text {

@@ -23,7 +23,24 @@ body {
 
 ol, ul {
   list-style: none; }
-
+strong{
+	font-weight:700;
+}
+h1{
+	font-size:2em;
+}
+h2{
+	font-size:1.8em;
+}
+h3{
+	font-size:1.6em;
+}
+h4{
+	font-size:1.4em;
+}
+h5{
+	font-size:1.2em;
+}
 blockquote, q {
   quotes: none; }
 
@@ -56,20 +73,32 @@ body{
             user-select: none; /* Non-prefixed version, currently
                                supported by Chrome and Opera */
 
-	input,textarea{
+	input,textarea,select{
 		border:1px solid $color1;
 		font-family: Oxygen;
+		font-size:1em;
+		color: $color1;
+		padding: .3em;
 		&:active,&:focus{
 			outline: none;
 		}
 	}
+	
+	select {
+	    overflow: hidden;
+		background: transparent;	
+		padding:0 .3em;		
+	}
+	
 	.page-header{
 		height: 5em;
 		background-color: $color1;
-		box-shadow: 0px -1px 3px 0px lighten($color1,30%);
+		display:flex;
+		width:100%;
 		.logo{
 			font-family: "Exo 2";
 			margin-top: 18px;
+			display: table;
 			.first{
 				font-weight: 600;
 				font-size: 30px;
@@ -81,36 +110,169 @@ body{
 				fill:lighten($color1,60%);
 			}
 		}
-		.searchbox{
-			display: inline-flex;
-			border: 1px solid lighten($color1,10%);
-			margin: 18px;
-			width:40%;
-			padding:0px;
-			input{
-				padding: .5em 1em;
-				border:none;
-				width:90%;
-				&:active,&:focus{
+		
+		@media screen and (min-width: 769px){
+			.searchbox{
+				display: inline-flex;
+				border: 1px solid lighten($color1,10%);
+				margin: 18px;
+				width:40%;
+				padding:0px;
+				min-width: 3em;
+				input{
+					padding: .5em 1em;
+					border:none;
+					width:90%;
+					&:active,&:focus{
+					}
+				}
+				button{
+					text-align:center;
+					background-color:lighten($color1,60%);
+					width:10%;
+					border:none;
+					padding: .5em 1em;
+					cursor: pointer;
+					color:$color1;
+					min-width:3em;
 				}
 			}
-			button{
-				text-align:center;
-				background-color:lighten($color1,60%);
-				width:10%;
-				border:none;
-				padding: .5em 1em;
-				cursor: pointer;
-				color:$color1;
+		}
+		@media screen and (max-width: 768px){
+			.searchbox{
+				display: inline-flex;
+				border: 1px solid lighten($color1,10%);
+				margin: 18px;
+				width:100%;
+				padding:0px;
+			    min-width: 13em;
+				input{
+					padding: .5em 1em;
+					border:none;
+					width:90%;
+					&:active,&:focus{
+					}
+				}
+				button{
+					text-align:center;
+					background-color:lighten($color1,60%);
+					width:10%;
+					border:none;
+					padding: .5em 1em;
+					cursor: pointer;
+					color:$color1;
+					min-width: 2.6em;
+				}
+			}
+		}
+	}
+	
+	@media screen and (max-width: 600px){
+		.page-header{
+			display:table;
+			.logo{
+				margin:auto;
 			}
 		}
 	}
 	.page-content{
-		background-color:$color2;
+		background-color:mix($color1,$color2,5%);
 		display:block;
 		margin-bottom:10em;
 		margin:0px;
 		padding:1em;
+		
+		.container{
+			background: $color2;
+			box-shadow: 0px 0px 6px -3px $color1;
+			padding: 2em;
+		}
+		.advertisement{
+		    text-align: center;
+			padding: 1em 0;
+		}
+		
+		table.app-details{
+			content:"";
+			thead{
+				tr{
+					th{
+						font-size: 1.8em;
+						font-weight: 500;
+						padding: .4em 0em;
+					}
+				}
+			}
+			tbody{
+				tr{
+					content:"";
+					th{
+						font-weight: 500;
+						padding: .3em;
+						position: relative;
+						&:after{
+							content:""
+						}
+					}
+					td{
+						font-weight: 300;
+						padding: .3em;
+						select{
+							content:"";
+							option{
+								content:"";
+							}
+						}
+					}
+				}
+			}
+			tfoot{
+				content:inherit;
+				tr{
+					td{
+						text-align:center;
+						padding: .3em;
+						button{
+							border: 1px solid lighten($color1,50%);
+							width: 80%;
+							padding: .8em;
+							color: lighten($color1,10%);
+							background-color: lighten($color1,60%);
+							cursor: pointer;
+							margin-top: 2em;
+							&:before{
+								content:" ";
+							}
+							&:after{
+								content:" ";
+							}
+							&:hover{
+								background-color: lighten($color1,55%);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.app-description{
+			padding: .3em;
+			text-align: justify;
+			position:relative;
+			margin-top:3em;
+			p,div,h2,h3,h4,h5,h1{
+				margin: .5em 0;
+			}
+			a{
+				text-decoration:none;
+			}
+			&:before{
+				content:"Description";
+				position: absolute;
+				top: -1em;
+				font-size: 1.8em;
+			}
+		}
 		
 		table.category{
 			width:100%;
@@ -177,6 +339,57 @@ body{
 						}
 					}
 				}
+			}
+		}
+		.download-information{
+			margin: 1em 3em 6em;
+			text-align:center;
+			
+		}
+		
+		.loader {
+			position: absolute;
+			top: calc(50% - 20px);
+			left: calc(50% - 20px);
+			@keyframes loader {
+			  0% { left: -100px }
+			  100% { left: 110%; }
+			}
+			.loader-box {
+			  width: 50px;
+			  height: 50px;
+			  background: $color1;
+			  animation: animate .5s linear infinite;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  border-radius: 3px;
+			}
+			@keyframes animate {
+			  17% { border-bottom-right-radius: 3px; }
+			  25% { transform: translateY(9px) rotate(22.5deg); }
+			  50% {
+				transform: translateY(18px) scale(1,.9) rotate(45deg) ;
+				border-bottom-right-radius: 40px;
+			  }
+			  75% { transform: translateY(9px) rotate(67.5deg); }
+			  100% { transform: translateY(0) rotate(90deg); }
+			} 
+			.loader-shadow { 
+			  width: 50px;
+			  height: 5px;
+			  background: $color1;
+			  opacity: 0.1;
+			  position: absolute;
+			  top: 59px;
+			  left: 0;
+			  border-radius: 50%;
+			  animation: shadow .5s linear infinite;
+			}
+			@keyframes shadow {
+			  50% {
+				transform: scale(1.2,1);
+			  }
 			}
 		}
 	}
