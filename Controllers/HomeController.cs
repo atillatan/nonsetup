@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using mvc.Models;
+using Db.Model;
+using Db.Repository;
 
 namespace mvc.Controllers
 {
@@ -12,6 +14,10 @@ namespace mvc.Controllers
     {        
         public IActionResult Index()
         {
+            //veri cekme
+            DownloadRepository dr=new DownloadRepository();
+            dr.List();
+            
             return View();
         }
 
