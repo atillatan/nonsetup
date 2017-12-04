@@ -5,34 +5,26 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Db.Repository;
+using Db.Model;
 
 namespace Db.Repository
 {
     public class DownloadRepository
     {
-        public void List()
+        public List<Download> List()
         {
             using (var context = new Database())
             {
-                // Create database
-                //context.Database.EnsureCreated();
-
+     
                 // Init sample data
                 //var download = new Download { Name = "Yuuko" };
                 //context.Add(download);     
                 //context.SaveChanges();
 
-    
-
- 
-
                 // Output data
-                var ret = context.Downloads.ToList();
+                return context.Download.ToList();
 
-                foreach (var x in ret)
-                {
-                    Console.WriteLine($"{ x.Name }");                    
-                }
+           
             }          
         }
     }

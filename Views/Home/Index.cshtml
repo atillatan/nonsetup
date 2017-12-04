@@ -1,6 +1,12 @@
-﻿@{
+﻿@using System.ComponentModel
+@using System.Threading.Tasks
+@using Db.Model
+
+
+@{
 ViewData["Title"] = "Nonsetup Downloads";
 }
+
 
 <div class="container">
 <div class="row">
@@ -12,12 +18,10 @@ ViewData["Title"] = "Nonsetup Downloads";
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td><a href="/download-detail">Ruby</a></td></tr>
-				<tr><td><a href="/download-detail">Eclipse</a></td></tr>
-				<tr><td><a href="/download-detail">Visual Code</a></td></tr>
-				<tr><td><a href="/download-detail">Phython</a></td></tr>
-				<tr><td><a href="/download-detail">JDK</a></td></tr>
-				<tr><td><a href="/download-detail">Dev C++</a></td></tr>
+				@foreach(Download item in Model) {
+					<tr><td><a href="/download-detail">@item.Name</a></td></tr>				
+				}
+ 
 			</tbody>
 			<tfoot>
 				<tr><th><a href="#">All</a></th></tr>

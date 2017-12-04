@@ -9,6 +9,7 @@ namespace Db.Model
 {
     public class Download
     {
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 

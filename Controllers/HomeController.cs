@@ -16,9 +16,9 @@ namespace mvc.Controllers
         {
             //veri cekme
             DownloadRepository dr=new DownloadRepository();
-            dr.List();
+            List<Download> list= dr.List();
             
-            return View();
+            return View(list);
         }
 
         [Route("download-detail")]
